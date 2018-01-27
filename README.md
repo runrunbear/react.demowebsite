@@ -1,7 +1,94 @@
+## to do:
+
 # steps:
+1. mobx
+npm install mobx --save
+npm install mobx-react --save
+
+2. router
+npm install --save react-router-dom
+
+3. ui library
+yarn add semantic-ui-react
+
+4. font
+npm install react-fontawesome
+
+5. jwt
+npm install jsonwebtoken
+npm install p-map
+npm install ansi-styles
+npm install js-base64
+
+6. google map
+npm install --save google-maps-react
+
+7. babel for @observable
+npm install --save-dev babel-plugin-transform-decorators-legacy babel-plugin-transform-class-properties
+
+## test
+1. npm install -g quik
+2. npm install chai sinon enzyme jsdom
+
+
+# warning / error:
+##. CORS
+fixed in nodejs
+
+# references
+## https://hackernoon.com/how-to-decouple-state-and-ui-a-k-a-you-dont-need-componentwillmount-cc90b787aa37
+https://www.robinwieruch.de/react-provider-pattern-context/
+https://medium.com/dailyjs/mobx-react-best-practices-17e01cec4140
+https://goshakkk.name/turn-uncontrolled-into-controlled/
+1. https://github.com/rwieruch/favesound-mobx
+2. https://github.com/wyc/semantic-ui-react-todos/blob/master/src/containers/AddTodo.js
+3. https://react.semantic-ui.com/layouts
+4. https://github.com/airbnb/javascript#iterators-and-generators
+
+# get started
 1. npm install -g create-react-app
 2. create-react-app react.demowebsite
-3. 
+3. git init (echo "# steps:" >> README.md)
+4. git add *
+5. git commit -m "first commit"
+6. git remote add origin git@github.com:andmap/react.demowebsite.git
+(git remote add origin https://github.com/assuredperformance/mobile.rn.cc)
+7. git push -u origin master
+8. npm install
+9. npm run build
+10. deploy to s3
+https://www.fullstackreact.com/articles/deploying-a-react-app-to-s3/
+* Bucket policy
+{
+  "Id": "Policy1515433848881",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1515433842951",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::andmap-demo-react/*",
+      "Principal": "*"
+    }
+  ]
+}
+* ACL: public / read permission
+* https://andmap-demo-react.s3-us-west-1.amazonaws.com/
+* s3cmd
+brew install s3cmd
+s3cmd --configure
+s3cmd ls
+s3cmd sync build/* s3://andmap-demo-react
+(specify index.html in both Index document and error document on S3 Static )
+
+setup cloudfront:
+https://console.aws.amazon.com/cloudfront/
+
+
+# references:
+1. https://github.com/learncodeacademy/react-js-tutorials
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
